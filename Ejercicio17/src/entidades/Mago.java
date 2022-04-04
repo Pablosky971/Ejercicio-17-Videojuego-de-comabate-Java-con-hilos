@@ -21,11 +21,7 @@ public Mago() {
 		
 	}
 
-	@Override
-	public void restarVida(double resta) {
-		this.vida -= resta;
-		
-	}
+	
 	
 
 }

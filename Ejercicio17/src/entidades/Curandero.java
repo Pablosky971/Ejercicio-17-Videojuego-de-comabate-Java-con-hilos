@@ -18,11 +18,6 @@ public Curandero() {
 		
 	}
 
-	@Override
-	public void restarVida(double resta) {
-		this.vida -= resta;
-		
-	} 
 	
 
 }

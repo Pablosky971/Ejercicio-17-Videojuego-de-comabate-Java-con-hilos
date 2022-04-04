@@ -1,16 +1,29 @@
 package entidades;
 
-public abstract class Personaje {
+public abstract class Personaje extends Thread {
 	
 	protected String nombre;
 	protected Arma arma;
-	protected double vida = 100.00;
+	protected double vida;
 	protected Poder poder;
 	protected double especialidad;
+	protected Fortaleza fortaleza;
 	
-	
+	public Personaje() {
+		this.setVida(100);
+	}
+
 	public abstract void atacar(Personaje p);
-	public abstract void restarVida(double resta);
+	
+	public void restarVida(double resta) {
+		this.vida -= resta;
+		
+	}
+
+	public void run() {
+		fortaleza.combateJefe(this);
+	}
+
 	
 	public String getNombre() {
 		return nombre;
@@ -28,6 +41,12 @@ public abstract class Personaje {
 		return vida;
 	}
 	public void setVida(int vida) {
+		if(this instanceof Jefe) {
+			if(this.vida < 300) {
+				vida = 300;
+			}
+		
+		}
 		this.vida = vida;
 	}
 	public Poder getPoder() {
@@ -43,6 +62,13 @@ public abstract class Personaje {
 	}
 	public void setEspecialidad(double especialidad) {
 		this.especialidad = especialidad;
+	}
+	
+	public Fortaleza getFortaleza() {
+		return fortaleza;
+	}
+	public void setFortaleza(Fortaleza fortaleza) {
+		this.fortaleza = fortaleza;
 	}
 	
 	

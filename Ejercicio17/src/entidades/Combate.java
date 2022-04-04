@@ -42,6 +42,17 @@ public class Combate {
 			System.out.println("==========================================================================================");
 		}
 		
+		if(p1 instanceof Jefe) {
+			System.out.println("==========================================================================================");
+			System.out.println("Características del Jefe " + p1.nombre + ":");
+			System.out.println("Arma empleada " + p1.arma.nombre + ", con un daño de " + p1.arma.damage + " puntos.");
+			System.out.println("Puntos de vida " + p1.vida + ".");
+			System.out.println("Poder: " + p1.poder + ".");
+			System.out.println("Daño sumado por especialidad: " + p1.especialidad + ".");
+			System.out.println("==========================================================================================");
+			
+		} 
+		
 		if(p2 instanceof Guerrero) {
 			System.out.println("==========================================================================================");
 			System.out.println("Características del Guerrero " + p2.nombre + ":");
@@ -73,6 +84,17 @@ public class Combate {
 			System.out.println("Daño sumado en caso de especialidad: " + p2.especialidad + ".");
 			System.out.println("==========================================================================================");
 		}
+		
+		if(p2 instanceof Jefe) {
+			System.out.println("==========================================================================================");
+			System.out.println("Características del Jefe " + p1.nombre + ":");
+			System.out.println("Arma empleada " + p1.arma.nombre + ", con un daño de " + p1.arma.damage + " puntos.");
+			System.out.println("Puntos de vida " + p1.vida + ".");
+			System.out.println("Poder: " + p1.poder + ".");
+			System.out.println("Daño sumado por especialidad: " + p1.especialidad + ".");
+			System.out.println("==========================================================================================");
+			
+		} 
 		
 		
 		// He indicado la condición de parada de esta forma, puesto que, al establecerla directamente en la condición del while, no funcionaba correctamente.
@@ -132,7 +154,7 @@ public class Combate {
 			
 		}
 		
-		if(p1.vida < 0) {
+		if(p1.vida <= 0) {
 			System.out.println("==========================================================================================");
 			System.out.println("El ganador del combate es " + p2.nombre + ".");
 			System.out.println(p2.nombre + " ha finalizado el combate con " + p2.vida + " puntos de vida.");
